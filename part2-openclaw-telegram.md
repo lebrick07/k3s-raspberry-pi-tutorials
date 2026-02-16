@@ -96,7 +96,7 @@ You'll get your Telegram User ID automatically during the OpenClaw setup in Step
 
 ### 2.1 Sign Up for Anthropic
 
-1. Go to: https://console.anthropic.com/
+1. Go to: [Anthropic Console](https://console.anthropic.com/)
 2. Sign up or log in
 3. Navigate to **API Keys** section
 4. Click **Create Key**
@@ -520,7 +520,7 @@ openclaw gateway config.patch '{"anthropic":{"apiKey":"sk-ant-api03-..."}}'
 ### Out of Credits
 
 If you run out of Anthropic credits:
-1. Go to https://console.anthropic.com/billing
+1. Go to [Billing](https://console.anthropic.com/billing)
 2. Add more credit
 3. API calls will resume automatically
 
@@ -590,7 +590,7 @@ Periodically rotate your Anthropic API key:
 
 ### 5. Monitor Costs
 
-Check Anthropic usage at: https://console.anthropic.com/settings/usage
+Check Anthropic usage at: [console.anthropic.com/settings/usage](https://console.anthropic.com/settings/usage)
 
 Set budget alerts to avoid surprises.
 
@@ -622,11 +622,11 @@ Still way cheaper than cloud Kubernetes! ☁️💸
 
 ## Resources
 
-- **OpenClaw Documentation**: https://docs.openclaw.ai
-- **OpenClaw GitHub**: https://github.com/openclaw/openclaw
-- **OpenClaw Community Discord**: https://discord.com/invite/clawd
-- **Anthropic Console**: https://console.anthropic.com/
-- **BotFather**: https://t.me/BotFather
+- [**OpenClaw Documentation**](https://docs.openclaw.ai)
+- [**OpenClaw GitHub**](https://github.com/openclaw/openclaw)
+- [**OpenClaw Community Discord**](https://discord.com/invite/clawd)
+- [**Anthropic Console**](https://console.anthropic.com/)
+- [**BotFather**](https://t.me/BotFather)
 
 ---
 

@@ -61,7 +61,7 @@ Copy the output (starts with `ssh-ed25519 AAAA...`). You'll need this in the nex
 
 ### 1.2 Flash the SD Card
 
-Download and install **Raspberry Pi Imager**: https://www.raspberrypi.com/software/
+Download and install [**Raspberry Pi Imager**](https://www.raspberrypi.com/software/)
 
 1. Insert your microSD card into your computer
 2. Open Raspberry Pi Imager
@@ -647,10 +647,10 @@ Full tutorial: Part 2 coming soon!
 
 ## Resources
 
-- **K3s Documentation**: https://docs.k3s.io
-- **Raspberry Pi OS**: https://www.raspberrypi.com/software/
-- **kubectl Cheat Sheet**: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-- **Traefik Docs**: https://doc.traefik.io/traefik/
+- [**K3s Documentation**](https://docs.k3s.io)
+- [**Raspberry Pi OS**](https://www.raspberrypi.com/software/)
+- [**kubectl Cheat Sheet**](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [**Traefik Docs**](https://doc.traefik.io/traefik/)
 
 ---
 
