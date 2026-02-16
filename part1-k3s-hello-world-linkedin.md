@@ -19,6 +19,22 @@ Legitimate Kubernetes on my desk, 15W power consumption.
 
 ---
 
+## 🎓 Complete Tutorial
+
+Copy-paste friendly. No manual editing. Full troubleshooting.
+
+**👉 STEP-BY-STEP GUIDE:**  
+**https://lebrick07.github.io/k3s-raspberry-pi-tutorials/part1-k3s-hello-world**
+
+**📖 Includes:**
+- Exact hardware shopping list
+- SSH + system prep (cgroups, swap)
+- K3s one-command install
+- Docker + Flask deployment
+- kubectl workflows
+
+---
+
 ## Why This Matters
 
 Learning Kubernetes usually means:
@@ -76,22 +92,6 @@ This mirrors real CI/CD pipelines.
 - Kubernetes primitives (pods, services, ingress)
 - Production debugging
 - ARM64 architecture
-
----
-
-## 🎓 Complete Tutorial
-
-Copy-paste friendly. No manual editing. Full troubleshooting.
-
-**👉 STEP-BY-STEP GUIDE:**  
-**https://lebrick07.github.io/k3s-raspberry-pi-tutorials/part1-k3s-hello-world**
-
-Includes:
-- Exact hardware shopping list
-- SSH + system prep (cgroups, swap)
-- K3s one-command install
-- Docker + Flask deployment
-- kubectl workflows
 
 ---
 
