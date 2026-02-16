@@ -207,25 +207,23 @@ free -h  # Swap line should show 0
 
 ### 2.4 Enable cgroups
 
-K3s requires cgroups to be enabled for container resource management.
+K3s requires cgroups to be enabled for container resource management. Run this automated script:
 
 ```bash
-# Edit boot configuration
-sudo nano /boot/firmware/cmdline.txt
+# Backup original cmdline.txt
+sudo cp /boot/firmware/cmdline.txt /boot/firmware/cmdline.txt.backup
+
+# Add cgroup parameters to the end of the existing line
+sudo sed -i '$ s/$/ cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory/' /boot/firmware/cmdline.txt
+
+# Verify it was added correctly
+cat /boot/firmware/cmdline.txt
 ```
 
-Add the following parameters to the **end of the existing line** (do not create a new line):
-
+You should see the cgroup parameters at the end of the line. If something went wrong, restore the backup:
+```bash
+sudo cp /boot/firmware/cmdline.txt.backup /boot/firmware/cmdline.txt
 ```
-cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
-```
-
-The line should look something like:
-```
-console=serial0,115200 console=tty1 root=PARTUUID=... rootfstype=ext4 ... cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
-```
-
-Save the file (Ctrl+O, Enter, Ctrl+X).
 
 ### 2.5 Reboot
 
