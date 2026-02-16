@@ -1,6 +1,6 @@
 # K3s on Raspberry Pi Tutorial Series
 
-**Deploy Kubernetes on a $150 ARM64 board and build production-grade infrastructure**
+**Deploy Kubernetes on a $300 ARM64 board and build production-grade infrastructure**
 
 ## 📚 Tutorial Series
 
@@ -15,7 +15,7 @@ Learn how to set up a Raspberry Pi 5, install K3s, and deploy your first contain
 - Deploying to Kubernetes with kubectl
 - Exposing services via NodePort
 
-**Time**: ~45 minutes | **Cost**: ~$182
+**Time**: ~45 minutes | **Cost**: ~$307
 
 ---
 
@@ -57,7 +57,7 @@ Build a complete multi-tenant B2B SaaS platform that provisions customer environ
 ## 💡 Why Raspberry Pi?
 
 - **Real Kubernetes** (same API as AWS EKS)
-- **$150 one-time cost** (no monthly bills)
+- **$300 one-time cost** (no monthly bills)
 - **ARM64 architecture** (future of computing)
 - **Edge computing** (IoT, local AI, hybrid cloud)
 - **Full control** (no rate limits, no vendor lock-in)

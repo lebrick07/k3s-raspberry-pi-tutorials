@@ -2,7 +2,7 @@
 
 **I just deployed Kubernetes on a Raspberry Pi 5. Here's how.**
 
-🚀 **Total cost: $182** (one-time, no monthly cloud bills)
+🚀 **Total cost: $307** (one-time, no monthly cloud bills)
 
 ## What I Built
 
@@ -15,7 +15,7 @@
 
 Most people think Kubernetes requires expensive cloud infrastructure. Wrong.
 
-A $150 Raspberry Pi gives you:
+A $300 Raspberry Pi gives you:
 - Real Kubernetes API (same as AWS EKS)
 - Full control over your infrastructure
 - Perfect learning environment

@@ -1,6 +1,6 @@
 # Part 1: Raspberry Pi 5 + K3s + Hello World
 
-**Deploy your first Kubernetes app on a $150 ARM64 board**
+**Deploy your first Kubernetes app on a $300 ARM64 board**
 
 ## What You'll Build
 
@@ -11,7 +11,7 @@ By the end of this tutorial, you'll have:
 - ✅ Understanding of kubectl basics and ingress routing
 
 **Time**: ~45 minutes  
-**Cost**: ~$150 (Raspberry Pi 5 kit)  
+**Cost**: ~$307 (or ~$257 with 128GB SD)  
 **Skill Level**: Beginner-friendly (basic terminal knowledge required)
 
 ---
@@ -28,12 +28,12 @@ By the end of this tutorial, you'll have:
 
 ### Shopping List
 
-- Raspberry Pi 5 (16GB): ~$80
+- Raspberry Pi 5 (16GB): $205
 - Official 27W USB-C PSU: ~$12
 - SanDisk Extreme Pro 512GB microSD: ~$70 (or 128GB for ~$20)
 - Heavy-Duty Aluminum Passive Cooling Case: ~$20
 
-**Total: ~$182 (or ~$132 with 128GB SD card)**
+**Total: ~$307 (or ~$257 with 128GB SD card)**
 
 ---
 
@@ -480,7 +480,7 @@ Flask app container (port 5000)
 
 - **Real Kubernetes**: Same API as AWS EKS, Google GKE, Azure AKS
 - **Learn Docker & Kubernetes**: Build, deploy, and manage containers hands-on
-- **Cost-Effective**: $150 one-time vs $50-100/month for cloud
+- **Cost-Effective**: $300 one-time vs $50-100/month for cloud
 - **Full Control**: Local cluster for experimenting without cloud bills or limits
 
 ---
@@ -609,14 +609,14 @@ In **Part 2**, we'll cover:
 Here's what I learned:
 
 🚀 **K3s makes Kubernetes accessible** - Single command installation, batteries included  
-💰 **$150 one-time cost vs $50-100/month cloud bills** - Perfect for learning and edge workloads  
+💰 **$300 one-time cost vs $50-100/month cloud bills** - Perfect for learning and edge workloads  
 🌐 **Real Kubernetes API** - Same kubectl commands as AWS EKS or Google GKE  
 🐳 **containerd is different from Docker** - Had to import images after building  
 🔥 **Passive cooling works great** - Heavy-duty aluminum case keeps temps stable  
 
 **Why this matters:**
 
-Edge computing is the future. Running production-grade Kubernetes on a $150 device opens up incredible possibilities:
+Edge computing is the future. Running production-grade Kubernetes on a $300 device opens up incredible possibilities:
 - Learn Kubernetes without AWS bills
 - Build home lab infrastructure
 - IoT and edge computing projects
