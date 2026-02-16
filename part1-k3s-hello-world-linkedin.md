@@ -98,7 +98,7 @@ Includes:
 ## Series Roadmap
 
 **Part 2:** OpenClaw AI - Installation and configuration + Telegram Bot setup  
-**Part 3:** OpenLuffy - multi-tenant DevOps platform with ArgoCD
+**Part 3:** AI-powered multi-tenant DevOps - Building an automated provisioning powerhouse
 
 ---
 
