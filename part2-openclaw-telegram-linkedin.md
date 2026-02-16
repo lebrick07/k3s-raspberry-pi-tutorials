@@ -1,4 +1,4 @@
-# LinkedIn Post - Part 2
+# LinkedIn Post: OpenClaw AI installation and Telegram bot configuration - Part 2
 
 **I just connected my Raspberry Pi K3s cluster to an AI assistant. Now I manage it via Telegram.**
 

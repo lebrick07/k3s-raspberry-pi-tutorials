@@ -1,4 +1,4 @@
-# LinkedIn Post - Part 1
+# LinkedIn Post: Raspberry Pi initial setup + K3s installation and Hello World app deployment - Part 1
 
 **I just deployed Kubernetes on a Raspberry Pi 5. Here's how.**
 
