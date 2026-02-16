@@ -76,22 +76,23 @@ Plus you own the hardware. No vendor lock-in.
 
 ---
 
-## Key Technical Learning
+## What You'll Learn
 
-K3s uses containerd (not Docker daemon). Build workflow:
+**Key technical challenge:** K3s uses containerd (not Docker daemon)
 
+Build workflow:
 ```bash
 docker build -t hello:latest .
 docker save hello:latest | sudo k3s ctr images import -
 ```
 
-This mirrors real CI/CD pipelines.
-
-**Skills learned:**
-- SSH keys, cgroups, container runtimes
-- Kubernetes primitives (pods, services, ingress)
-- Production debugging
-- ARM64 architecture
+**Skills you'll gain:**
+- Basic Linux commands and system administration
+- Production-grade Raspberry Pi setup
+- Containerd vs Docker (runtime differences)
+- Building Docker images from scratch
+- Deploying Flask applications
+- K3s vs full Kubernetes (when to use lightweight K8s)
 
 ---
 
