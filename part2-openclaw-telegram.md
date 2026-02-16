@@ -86,13 +86,11 @@ Keep your token secure and store it safely...
 
 Example token format: `1234567890:ABCdefGHIjklMNOpqrsTUVwxyz1234567890`
 
-### 1.4 Get Your Telegram User ID
+### 1.4 Note About User ID
 
-1. Search for **@userinfobot** on Telegram
-2. Start a chat and send any message
-3. It will reply with your User ID (e.g., `123456789`)
+You'll get your Telegram User ID automatically during the OpenClaw setup in Step 4. When you first message your bot, OpenClaw will detect and show your User ID.
 
-**Save this User ID!** This restricts bot access to only you.
+No need to use @userinfobot or any external service!
 
 ---
 
@@ -194,11 +192,12 @@ Paste your API key from Step 2.1.
 Paste your bot token from Step 1.3.
 
 **6. Allowed Telegram Users:**
-```
-? Enter allowed Telegram user IDs (comma-separated): 123456789
-```
 
-Enter your User ID from Step 1.4. This restricts access to only you.
+The wizard will detect your User ID when you first message the bot. You can either:
+- Leave it empty now and add it after first message
+- Or enter your User ID if you already know it (e.g., `123456789`)
+
+The setup will show you: "Detected new user: 123456789 (@yourusername)" when you first chat with the bot.
 
 **7. Additional Channels:**
 ```
@@ -535,9 +534,15 @@ To allow additional Telegram users (family, team members):
 
 ### Get Their User ID
 
-Have them:
-1. Message **@userinfobot** on Telegram
-2. Send you their User ID
+Have them message your bot once. You'll see in the logs:
+
+```bash
+openclaw gateway logs
+```
+
+Look for: `Unauthorized user attempted access: 987654321 (@theirusername)`
+
+That's their User ID!
 
 ### Add to Allowlist
 
