@@ -19,15 +19,18 @@ Learn how to set up a Raspberry Pi 5, install K3s, and deploy your first contain
 
 ---
 
-### Part 2: OpenClaw AI + Telegram Bot *(coming soon)*
+### [Part 2: OpenClaw AI + Telegram Bot](part2-openclaw-telegram.md)
 Install OpenClaw AI assistant on your Pi and manage your K3s cluster remotely via Telegram.
 
 **What you'll learn:**
-- OpenClaw installation and configuration
-- Setting up Telegram bot for remote access
-- Monitoring cluster health with AI
-- Proactive alerts and automation
-- Managing deployments via chat
+- Creating a Telegram bot with BotFather
+- Installing OpenClaw with one command
+- Configuring AI model (Anthropic Claude)
+- Managing K3s cluster via chat commands
+- AI-powered troubleshooting and deployments
+- Setting up proactive monitoring
+
+**Time**: ~30 minutes | **Cost**: ~$1-5/month (API usage)
 
 ---
 
