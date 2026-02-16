@@ -90,8 +90,6 @@ Example token format: `1234567890:ABCdefGHIjklMNOpqrsTUVwxyz1234567890`
 
 You'll get your Telegram User ID automatically during the OpenClaw setup in Step 4. When you first message your bot, OpenClaw will detect and show your User ID.
 
-No need to use @userinfobot or any external service!
-
 ---
 
 ## Step 2: Get Anthropic API Key
