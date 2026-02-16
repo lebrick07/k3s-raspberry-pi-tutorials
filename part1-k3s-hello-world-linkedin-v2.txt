@@ -1,0 +1,71 @@
+I just deployed production-grade Kubernetes on a Raspberry Pi 5.
+
+Not a toy. Real Kubernetes - same API as AWS EKS, Google GKE, Azure AKS. Running on my desk for $307 one-time.
+
+━━━━━━━━━━━━━━━━━━━━
+
+THE JOURNEY
+
+I've been running cloud Kubernetes for years, paying $150-200/month for environments that sit idle most of the time. Every tutorial points you to Minikube or Docker Desktop - simulated environments that don't teach real cluster management.
+
+So I tried something different: run actual Kubernetes locally on a Raspberry Pi 5.
+
+Within 30 minutes of installing K3s, I had a full control plane running. API server, scheduler, etcd, Traefik ingress, CoreDNS. Then I built a custom Flask app, containerized it, and deployed it with kubectl. Two replicas with load balancing. Real production patterns.
+
+The cluster uses 15-20% CPU and 3GB RAM. Room for 20-30 more apps. Functional infrastructure consuming 15 watts.
+
+━━━━━━━━━━━━━━━━━━━━
+
+🎓 FULL TUTORIAL
+
+👉 https://lebrick07.github.io/k3s-raspberry-pi-tutorials/part1-k3s-hello-world
+
+Copy-paste commands. Hardware list. Complete troubleshooting.
+
+━━━━━━━━━━━━━━━━━━━━
+
+THE CHALLENGE
+
+K3s uses containerd, not Docker daemon. You build with Docker, then import:
+
+docker build -t myapp:latest .
+docker save myapp:latest | sudo k3s ctr images import -
+
+That second command was the "aha moment." It mirrors real CI/CD - build in one place, import into runtime. This separation is closer to production than Docker Desktop ever taught me.
+
+━━━━━━━━━━━━━━━━━━━━
+
+WHY IT MATTERS
+
+Cloud providers hit you with bills. Minikube doesn't teach real operations.
+
+K3s on Pi gives you real infrastructure you own. You learn ARM64 (AWS Graviton, Apple Silicon). You debug actual networking and container issues. You stop paying to experiment.
+
+My Pi paid for itself in two months vs managed EKS.
+
+━━━━━━━━━━━━━━━━━━━━
+
+THE RESULTS
+
+Hardware: Pi 5 16GB, 512GB SD, passive cooling
+Performance: 15-20% CPU, 3.2GB/16GB RAM
+Cost: $307 + $2/mo vs $159/mo AWS
+
+Skills: Linux admin, containerd vs Docker, image building, K3s vs K8s, deployment workflows
+
+━━━━━━━━━━━━━━━━━━━━
+
+NEXT IN SERIES
+
+Part 2: OpenClaw AI - manage cluster via Telegram
+Part 3: Multi-tenant DevOps platform with ArgoCD
+
+━━━━━━━━━━━━━━━━━━━━
+
+Tried Kubernetes on ARM64? What would you deploy?
+
+Comment below! 🚀
+
+━━━━━━━━━━━━━━━━━━━━
+
+#Kubernetes #K3s #RaspberryPi #EdgeComputing #DevOps #Docker #ARM64 #HomeLab #CloudComputing #SRE #CNCF #CloudNative #InfrastructureAsCode #Learning
