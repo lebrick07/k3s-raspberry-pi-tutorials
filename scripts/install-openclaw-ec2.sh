@@ -22,17 +22,23 @@ sudo apt-get install -y \
   unzip
 
 # ===== 1) Install Node.js 22.x (NodeSource) =====
-log "Installing Node.js 22.x via NodeSource"
-sudo apt-get remove -y nodejs >/dev/null 2>&1 || true
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt-get install -y nodejs
+log "Ensuring Node.js >= 22.12.0 is installed"
+NEED_NODE=1
+if command -v node >/dev/null 2>&1; then
+  if node -e 'const [maj,min]=process.versions.node.split(".").map(Number); process.exit((maj>22 || (maj===22 && min>=12))?0:1)'; then
+    NEED_NODE=0
+  fi
+fi
+
+if [[ "$NEED_NODE" -eq 1 ]]; then
+  log "Installing Node.js 22.x via NodeSource"
+  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+fi
 
 log "Verifying Node/NPM versions"
 node -v
 npm -v
-
-# Enforce minimum node version (>=22.12.0)
-node -e 'const [maj,min]=process.versions.node.split(".").map(Number); if (maj<22 || (maj===22 && min<12)) { console.error("Node must be >= 22.12.0. Current:", process.versions.node); process.exit(1);}'
 
 # ===== 2) Configure user-global npm prefix =====
 log "Configuring npm global prefix to $NPM_PREFIX (user-local)"
@@ -49,11 +55,6 @@ log "Persisting PATH in ~/.bashrc and ~/.profile"
 PATH_LINE='export PATH="$HOME/.npm-global/bin:$PATH"'
 grep -qxF "$PATH_LINE" "$HOME/.bashrc" 2>/dev/null || echo "$PATH_LINE" >> "$HOME/.bashrc"
 grep -qxF "$PATH_LINE" "$HOME/.profile" 2>/dev/null || echo "$PATH_LINE" >> "$HOME/.profile"
-
-# Source now so this session is correct (harmless if already loaded)
-# shellcheck disable=SC1090
-source "$HOME/.bashrc" >/dev/null 2>&1 || true
-hash -r || true
 
 # ===== 3) Install OpenClaw (pin known-good version) =====
 log "Installing OpenClaw @ ${OPENCLAW_VERSION}"
@@ -73,17 +74,24 @@ openclaw --version
 
 # ===== 4) Configure OpenClaw (setup + gateway mode) =====
 log "Running OpenClaw setup (creates initial config)"
-# If setup is already done, it should be safe to re-run; ignore non-zero if it exits early.
-openclaw setup || true
+openclaw setup --yes || true
 
 log "Setting gateway.mode = $GATEWAY_MODE"
 openclaw config set gateway.mode "$GATEWAY_MODE"
 
-# ===== 5) Generate gateway token (non-interactive) =====
-log "Generating and configuring a gateway token (non-interactive)"
-# openclaw doctor prompts "Generate and configure a gateway token now?"
-# We pipe "Yes" to accept. If doctor exits non-zero due to UI/cancel, don't fail the whole script.
-printf "Yes\n" | openclaw doctor || true
+# Recommended auth default
+log "Setting gateway auth mode = token"
+openclaw config set gateway.auth.mode token || true
+
+# ===== 5) Generate gateway token (prefer non-interactive command) =====
+log "Generating and configuring a gateway token"
+if openclaw devices token --help >/dev/null 2>&1; then
+  # Newer OpenClaw builds have explicit token commands
+  openclaw devices token generate --name "ec2-$(hostname)" --set-default || true
+else
+  # Fallback: doctor prompt (best-effort)
+  printf "Yes\n" | openclaw doctor || true
+fi
 
 log "Final verification"
 openclaw doctor || true
@@ -92,13 +100,13 @@ cat <<'EOF'
 
 ✅ OpenClaw installed and configured.
 
-Notes:
-  - PATH persisted in ~/.bashrc and ~/.profile
-  - gateway.mode set (local by default)
-  - a gateway token was generated via openclaw doctor (if supported non-interactively)
-
 Next:
-  - Start gateway (local mode):  openclaw gateway start
+  - Start gateway (local mode):  openclaw gateway
+                                 (or: openclaw gateway start)
   - If you chose remote mode, prefer SSH tunneling vs opening ports publicly.
+
+Tip: If 'openclaw' isn't found in a NEW SSH session:
+  source ~/.profile
+  source ~/.bashrc
 
 EOF

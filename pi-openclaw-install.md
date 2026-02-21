@@ -40,14 +40,15 @@ curl -fsSL https://raw.githubusercontent.com/lebrick07/k3s-raspberry-pi-tutorial
 
 1. **System Updates**: Updates `apt` and installs build prerequisites
 2. **Architecture Check**: Verifies ARM64 (aarch64) architecture
-3. **Node.js 22.x**: Installs Node.js 22.x LTS via NodeSource (ARM64 binaries)
+3. **Node.js 22.x**: Checks for existing Node.js ≥22.12.0; installs via NodeSource only if needed (ARM64 binaries)
 4. **User-Local npm**: Configures npm to install global packages without `sudo`
 5. **OpenClaw Installation**: Installs OpenClaw from npm (pinned version: `2026.2.21-2`)
 6. **PATH Configuration**: Adds `~/.npm-global/bin` to both `~/.bashrc` and `~/.profile`
-7. **OpenClaw Setup**: Runs `openclaw setup` to create initial configuration
+7. **OpenClaw Setup**: Runs `openclaw setup --yes` non-interactively
 8. **Gateway Mode**: Sets gateway mode to `local` by default (configurable via `GATEWAY_MODE` env var)
-9. **Gateway Token**: Generates and configures a gateway token non-interactively
-10. **Verification**: Runs `openclaw doctor` to validate the installation
+9. **Gateway Auth**: Sets recommended token-based authentication
+10. **Gateway Token**: Generates gateway token using `openclaw devices token generate`
+11. **Verification**: Runs `openclaw doctor` to validate the installation
 
 ---
 
@@ -238,6 +239,8 @@ openclaw doctor
 The installation script already ran `openclaw setup` and generated a gateway token. Simply start the gateway:
 
 ```bash
+openclaw gateway
+# or
 openclaw gateway start
 ```
 
@@ -251,6 +254,13 @@ View gateway logs:
 
 ```bash
 openclaw gateway logs
+```
+
+**Note**: If `openclaw` command is not found in a new SSH session, source your profile:
+
+```bash
+source ~/.profile
+source ~/.bashrc
 ```
 
 ---
