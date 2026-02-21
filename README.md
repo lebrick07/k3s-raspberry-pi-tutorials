@@ -34,6 +34,20 @@ Install OpenClaw AI assistant on your Pi and manage your K3s cluster remotely vi
 
 ---
 
+### [Raspberry Pi: OpenClaw Installation](pi-openclaw-install.md)
+One-command setup for OpenClaw on Raspberry Pi OS (64-bit).
+
+**What you'll learn:**
+- Node.js 22.x installation on ARM64
+- User-local npm configuration (no sudo required)
+- OpenClaw installation and verification
+- Systemd service setup for auto-start on boot
+- Performance monitoring and optimization tips
+
+**Time**: ~5 minutes | **Hardware**: Raspberry Pi 4 (4GB+) or Pi 5 (8GB+ recommended)
+
+---
+
 ### [EC2 Ubuntu: OpenClaw Installation](ec2-ubuntu-openclaw-install.md)
 One-command setup for OpenClaw on AWS EC2 Ubuntu instances.
 
