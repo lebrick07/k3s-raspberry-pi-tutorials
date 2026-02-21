@@ -4,6 +4,19 @@
 
 ## 📚 Tutorial Series
 
+### [Automated Setup: Raspberry Pi K3s (One-Command)](pi-k3s-automated-setup.md)
+**NEW!** One-command setup from fresh Raspberry Pi OS to production-ready K3s cluster.
+
+**What you'll get:**
+- Fully automated installation of Docker, Node.js, Python, AWS CLI, Terraform
+- K3s cluster ready in ~15 minutes
+- Perfect for quick setup or multiple Pi nodes
+- Idempotent script (safe to re-run)
+
+**Time**: ~15 minutes (hands-off) | **Cost**: Same as Part 1
+
+---
+
 ### [Part 1: Raspberry Pi 5 + K3s + Hello World](part1-k3s-hello-world.md)
 Learn how to set up a Raspberry Pi 5, install K3s, and deploy your first containerized Flask app.
 
