@@ -34,6 +34,20 @@ Install OpenClaw AI assistant on your Pi and manage your K3s cluster remotely vi
 
 ---
 
+### [EC2 Ubuntu: OpenClaw Installation](ec2-ubuntu-openclaw-install.md)
+One-command setup for OpenClaw on AWS EC2 Ubuntu instances.
+
+**What you'll learn:**
+- Node.js 22.x installation via NodeSource
+- User-local npm configuration (no sudo required)
+- OpenClaw installation and verification
+- Security best practices for EC2
+- Troubleshooting common issues
+
+**Time**: ~5 minutes | **Cost**: EC2 instance cost only
+
+---
+
 ### Part 3: Multi-Tenant DevOps AI Platform *(coming soon)*
 Build a complete multi-tenant B2B SaaS platform that provisions customer environments automatically.
 
